@@ -6,7 +6,6 @@ import MenuHighlights from './components/MenuHighlights';
 import FullMenu from './components/FullMenu';
 import Reservation from './components/Reservation';
 import Reviews from './components/Reviews';
-import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -21,7 +20,6 @@ export default function Home() {
         <FullMenu />
         <Reservation />
         <Reviews />
-        <Portfolio />
         <Contact />
       </main>
       <Footer />

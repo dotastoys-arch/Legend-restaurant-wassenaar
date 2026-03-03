@@ -111,18 +111,21 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="h-full min-h-[400px] bg-gray-200 rounded-2xl overflow-hidden relative shadow-sm border border-gray-100"
+            className="h-full min-h-[400px] bg-gray-200 rounded-2xl overflow-hidden relative shadow-sm border border-gray-100 group"
           >
-            {/* In a real app, you'd put an iframe or Google Maps component here */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-500 bg-gray-100 p-8 text-center">
-              <MapPin size={48} className="text-gray-400 mb-4" />
-              <p className="font-medium mb-2">Interactieve Kaart</p>
-              <p className="text-sm">Van Hogendorpstraat 61, Wassenaar</p>
+            <div 
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+              style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074&auto=format&fit=crop")' }}
+            ></div>
+            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300 flex flex-col items-center justify-center text-white p-8 text-center">
+              <MapPin size={48} className="text-legend-gold mb-4 drop-shadow-md" />
+              <p className="font-medium mb-2 text-lg drop-shadow-md">Interactieve Kaart</p>
+              <p className="text-sm text-white/90 drop-shadow-md">Van Hogendorpstraat 61, Wassenaar</p>
               <a 
                 href="https://maps.google.com/?q=Van+Hogendorpstraat+61,+2242+KX+Wassenaar" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="mt-6 inline-block bg-legend-dark text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-black transition-colors"
+                className="mt-6 inline-block bg-legend-gold text-legend-dark px-8 py-3 rounded-full text-sm font-bold tracking-wider uppercase hover:bg-white transition-colors shadow-lg"
               >
                 Open in Google Maps
               </a>

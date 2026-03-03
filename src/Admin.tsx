@@ -163,12 +163,6 @@ export default function Admin() {
           >
             <Utensils size={18} /> Menu
           </button>
-          <button 
-            onClick={() => setActiveTab('portfolio')}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-left ${activeTab === 'portfolio' ? 'bg-white/10 text-legend-gold' : 'hover:bg-white/5'}`}
-          >
-            <ImageIcon size={18} /> Portfolio
-          </button>
         </nav>
         <div className="pt-8 mt-auto border-t border-white/10">
           <button 
@@ -188,7 +182,6 @@ export default function Admin() {
             <h1 className="text-3xl font-serif text-legend-dark">
               {activeTab === 'about' && 'Over Ons Aanpassen'}
               {activeTab === 'menu' && 'Menu Beheren'}
-              {activeTab === 'portfolio' && 'Portfolio Beheren'}
             </h1>
             <div className="flex items-center gap-4">
               {saveMessage && <span className="text-sm text-green-600 font-medium">{saveMessage}</span>}
@@ -285,83 +278,6 @@ export default function Admin() {
                           </div>
                         </div>
                       ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {activeTab === 'portfolio' && (
-              <div className="space-y-8">
-                <p className="text-sm text-gray-500 mb-4">Bewerk hier de uitgelichte portfolio items.</p>
-                {data.portfolio.map((item: any, index: number) => (
-                  <div key={item.id} className="border border-gray-200 rounded-xl p-6 space-y-4">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Titel</label>
-                        <input 
-                          type="text" 
-                          value={item.title}
-                          onChange={e => {
-                            const newPortfolio = [...data.portfolio];
-                            newPortfolio[index].title = e.target.value;
-                            setData({...data, portfolio: newPortfolio});
-                          }}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-legend-gold focus:border-legend-gold"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Tag (bijv. Webdesign)</label>
-                        <input 
-                          type="text" 
-                          value={item.tag}
-                          onChange={e => {
-                            const newPortfolio = [...data.portfolio];
-                            newPortfolio[index].tag = e.target.value;
-                            setData({...data, portfolio: newPortfolio});
-                          }}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-legend-gold focus:border-legend-gold"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Beschrijving</label>
-                      <input 
-                        type="text" 
-                        value={item.description}
-                        onChange={e => {
-                          const newPortfolio = [...data.portfolio];
-                          newPortfolio[index].description = e.target.value;
-                          setData({...data, portfolio: newPortfolio});
-                        }}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-legend-gold focus:border-legend-gold"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Website URL</label>
-                      <input 
-                        type="text" 
-                        value={item.url}
-                        onChange={e => {
-                          const newPortfolio = [...data.portfolio];
-                          newPortfolio[index].url = e.target.value;
-                          setData({...data, portfolio: newPortfolio});
-                        }}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-legend-gold focus:border-legend-gold"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Afbeelding URL</label>
-                      <input 
-                        type="text" 
-                        value={item.imageUrl}
-                        onChange={e => {
-                          const newPortfolio = [...data.portfolio];
-                          newPortfolio[index].imageUrl = e.target.value;
-                          setData({...data, portfolio: newPortfolio});
-                        }}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-legend-gold focus:border-legend-gold"
-                      />
                     </div>
                   </div>
                 ))}
