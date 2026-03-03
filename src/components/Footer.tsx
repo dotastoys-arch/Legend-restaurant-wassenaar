@@ -98,6 +98,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Legend Restaurant Wassenaar. Alle rechten voorbehouden.
           </p>
           <div className="flex gap-4">
+            <a href="/admin" className="hover:text-white transition-colors">Admin Login</a>
             <a href="#" className="hover:text-white transition-colors">Privacybeleid</a>
             <a href="#" className="hover:text-white transition-colors">Algemene Voorwaarden</a>
           </div>

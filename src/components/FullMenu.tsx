@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
-const menuData = {
+const defaultMenuData = {
   Voorgerechten: [
     { name: 'Loempia Legend', description: 'Huisgemaakte grote loempia met kip en groenten', price: '€ 6,50' },
     { name: 'Pangsit Goreng', description: 'Krokant gebakken deegkussentjes met vleesvulling (6 stuks)', price: '€ 5,50' },
@@ -34,7 +34,22 @@ const menuData = {
 };
 
 export default function FullMenu() {
-  const [activeCategory, setActiveCategory] = useState<keyof typeof menuData>('Chinees');
+  const [menuData, setMenuData] = useState<any>(defaultMenuData);
+  const [activeCategory, setActiveCategory] = useState<string>('Chinees');
+
+  useEffect(() => {
+    fetch('/api/data')
+      .then(res => res.json())
+      .then(json => {
+        if (json.menu) {
+          setMenuData(json.menu);
+          if (!Object.keys(json.menu).includes(activeCategory)) {
+            setActiveCategory(Object.keys(json.menu)[0]);
+          }
+        }
+      })
+      .catch(err => console.error('Failed to fetch menu data', err));
+  }, []);
 
   return (
     <section id="volledig-menu" className="py-24 bg-legend-paper relative">

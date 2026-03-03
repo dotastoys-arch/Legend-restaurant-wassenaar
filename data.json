@@ -1,0 +1,48 @@
+{
+  "about": {
+    "title": "De Harmonie van Drie Keukens",
+    "text1": "Welkom bij Legend, waar traditie en modern genieten samenkomen in het hart van Wassenaar. Wij nodigen u uit voor een culinaire ontdekkingsreis door de rijke smaken van Azië.",
+    "text2": "Wij zijn bijzonder trots op onze pan-Aziatische expertise. Of u nu verlangt naar de verfijnde nuances van de Kantonese en Szechuan keuken, de perfecte balans van zoet, zuur en pittig in onze authentieke Thaise curries, of de rijke, geurige boemboes van een uitgebreide Indische rijsttafel — bij Legend bereiden we elk gerecht met toewijding en verse ingrediënten. Laat ons u begeleiden naar de perfecte combinatie voor uw diner."
+  },
+  "menu": {
+    "Voorgerechten": [
+      { "name": "Loempia Legend", "description": "Huisgemaakte grote loempia met kip en groenten", "price": "€ 6,50" },
+      { "name": "Pangsit Goreng", "description": "Krokant gebakken deegkussentjes met vleesvulling (6 stuks)", "price": "€ 5,50" },
+      { "name": "Tom Yam Kung", "description": "Pikante Thaise soep met garnalen en verse kruiden", "price": "€ 7,50" },
+      { "name": "Kippensoep", "description": "Klassieke heldere kippensoep", "price": "€ 4,50" }
+    ],
+    "Chinees": [
+      { "name": "Babi Pangang Speciaal", "description": "Krokant geroosterd varkensvlees in pikante tomatensaus", "price": "€ 18,50" },
+      { "name": "Foe Yong Hai", "description": "Omelet met kipfilet in zoetzure saus", "price": "€ 16,50" },
+      { "name": "Tjap Tjoy", "description": "Gemengde verse groenten met kipfilet", "price": "€ 16,50" },
+      { "name": "Peking Eend", "description": "Geroosterde eend met een zachte pruimensaus", "price": "€ 21,50" }
+    ],
+    "Thais": [
+      { "name": "Kaeng Khiao Wan Gai (Groene Curry)", "description": "Kipfilet in groene curry met kokosmelk en groenten", "price": "€ 19,50" },
+      { "name": "Kaeng Phed Nua (Rode Curry)", "description": "Ossenhaas in rode curry met bamboescheuten", "price": "€ 21,50" },
+      { "name": "Phad Thai", "description": "Gebakken rijstnoedels met garnalen, ei, pinda's en taugé", "price": "€ 18,50" }
+    ],
+    "Indisch": [
+      { "name": "Nasi Rames Speciaal", "description": "Uitgebreide rijstmaaltijd met diverse vlees- en groentegerechten", "price": "€ 19,50" },
+      { "name": "Daging Roedjak", "description": "Gestoofd rundvlees in een licht pikante saus", "price": "€ 18,50" },
+      { "name": "Ajam Ketjap", "description": "Kipfilet in een zoete ketjapsaus", "price": "€ 17,50" },
+      { "name": "Rijsttafel Legend (vanaf 2 pers.)", "description": "Een selectie van onze beste Indische gerechten", "price": "€ 28,50 p.p." }
+    ],
+    "Bijgerechten": [
+      { "name": "Witte Rijst", "description": "", "price": "€ 3,50" },
+      { "name": "Nasi of Bami Goreng", "description": "", "price": "€ 5,50" },
+      { "name": "Mihoen Goreng", "description": "", "price": "€ 7,50" },
+      { "name": "Kroepoek", "description": "", "price": "€ 3,50" }
+    ]
+  },
+  "portfolio": [
+    {
+      "id": "1",
+      "title": "Legend Restaurant",
+      "description": "Chinees • Thais • Indisch restaurant in Wassenaar.",
+      "url": "https://legend.webdiscovery.nl/",
+      "imageUrl": "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop",
+      "tag": "Webdesign"
+    }
+  ]
+}

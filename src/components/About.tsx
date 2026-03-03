@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 
 export default function About() {
+  const [data, setData] = useState({
+    title: 'De Harmonie van Drie Keukens',
+    text1: 'Welkom bij Legend, waar traditie en modern genieten samenkomen in het hart van Wassenaar. Wij nodigen u uit voor een culinaire ontdekkingsreis door de rijke smaken van Azië.',
+    text2: 'Wij zijn bijzonder trots op onze pan-Aziatische expertise. Of u nu verlangt naar de verfijnde nuances van de Kantonese en Szechuan keuken, de perfecte balans van zoet, zuur en pittig in onze authentieke Thaise curries, of de rijke, geurige boemboes van een uitgebreide Indische rijsttafel — bij Legend bereiden we elk gerecht met toewijding en verse ingrediënten. Laat ons u begeleiden naar de perfecte combinatie voor uw diner.'
+  });
+
+  useEffect(() => {
+    fetch('/api/data')
+      .then(res => res.json())
+      .then(json => {
+        if (json.about) setData(json.about);
+      })
+      .catch(err => console.error('Failed to fetch about data', err));
+  }, []);
+
   return (
     <section id="over" className="py-24 bg-legend-paper relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,17 +35,17 @@ export default function About() {
                 Onze Passie
               </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl text-legend-dark font-serif leading-tight mb-6">
-                De Harmonie van Drie Keukens
+                {data.title}
               </h2>
               <div className="w-24 h-1 bg-legend-gold mb-8"></div>
             </div>
             
             <p className="text-lg text-gray-700 leading-relaxed font-serif italic">
-              Welkom bij Legend, waar traditie en modern genieten samenkomen in het hart van Wassenaar. Wij nodigen u uit voor een culinaire ontdekkingsreis door de rijke smaken van Azië.
+              {data.text1}
             </p>
             
             <p className="text-base text-gray-600 leading-relaxed">
-              Wij zijn bijzonder trots op onze pan-Aziatische expertise. Of u nu verlangt naar de verfijnde nuances van de Kantonese en Szechuan keuken, de perfecte balans van zoet, zuur en pittig in onze authentieke Thaise curries, of de rijke, geurige boemboes van een uitgebreide Indische rijsttafel — bij Legend bereiden we elk gerecht met toewijding en verse ingrediënten. Laat ons u begeleiden naar de perfecte combinatie voor uw diner.
+              {data.text2}
             </p>
 
             <div className="pt-6 border-t border-gray-200">
