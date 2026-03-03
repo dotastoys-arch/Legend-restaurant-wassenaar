@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import MenuHighlights from './components/MenuHighlights';
+import FullMenu from './components/FullMenu';
 import Reservation from './components/Reservation';
 import Reviews from './components/Reviews';
 import Footer from './components/Footer';
@@ -15,6 +16,7 @@ export default function App() {
         <Hero />
         <About />
         <MenuHighlights />
+        <FullMenu />
         <Reservation />
         <Reviews />
       </main>

@@ -75,8 +75,39 @@ export default function Reservation() {
               <CheckCircle2 size={64} className="text-green-600 mx-auto mb-6" />
               <h3 className="text-3xl font-serif text-legend-dark mb-4">Reservering Ontvangen</h3>
               <p className="text-gray-600 mb-8">
-                Beste {formData.name}, we kijken ernaar uit u te verwelkomen op {formData.date} om {formData.time} voor {formData.guests} {parseInt(formData.guests) === 1 ? 'persoon' : 'personen'}.
-                <br /><br />
+                Beste {formData.name}, we kijken ernaar uit u te verwelkomen. Hier is een overzicht van uw aanvraag:
+              </p>
+              
+              <div className="bg-white rounded-xl p-6 mb-8 text-left max-w-md mx-auto border border-gray-100 shadow-sm">
+                <ul className="space-y-4 text-gray-700">
+                  <li className="flex items-center gap-3">
+                    <User size={18} className="text-legend-gold" />
+                    <span><strong>Naam:</strong> {formData.name}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Calendar size={18} className="text-legend-gold" />
+                    <span><strong>Datum:</strong> {formData.date}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Clock size={18} className="text-legend-gold" />
+                    <span><strong>Tijd:</strong> {formData.time}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Users size={18} className="text-legend-gold" />
+                    <span><strong>Aantal:</strong> {formData.guests} {parseInt(formData.guests) === 1 ? 'persoon' : 'personen'}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Mail size={18} className="text-legend-gold" />
+                    <span><strong>E-mail:</strong> {formData.email}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Phone size={18} className="text-legend-gold" />
+                    <span><strong>Telefoon:</strong> {formData.phone}</span>
+                  </li>
+                </ul>
+              </div>
+
+              <p className="text-sm text-gray-500 mb-8 italic">
                 We hebben een bevestiging gestuurd naar <strong>{formData.email}</strong>.
               </p>
               <button
