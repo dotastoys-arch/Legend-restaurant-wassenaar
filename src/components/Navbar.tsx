@@ -19,6 +19,7 @@ export default function Navbar() {
     { name: 'Menu', href: '#menu' },
     { name: 'Reserveren', href: '#reserveren' },
     { name: 'Reviews', href: '#reviews' },
+    { name: 'Portfolio', href: '#portfolio' },
     { name: 'Contact', href: '#contact' },
   ];
 

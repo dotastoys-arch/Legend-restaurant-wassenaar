@@ -73,9 +73,9 @@ export default function Reservation() {
               className="text-center py-12"
             >
               <CheckCircle2 size={64} className="text-green-600 mx-auto mb-6" />
-              <h3 className="text-3xl font-serif text-legend-dark mb-4">Reservering Ontvangen</h3>
+              <h3 className="text-3xl font-serif text-legend-dark mb-4">Reserveringsaanvraag Ontvangen</h3>
               <p className="text-gray-600 mb-8">
-                Beste {formData.name}, we kijken ernaar uit u te verwelkomen. Hier is een overzicht van uw aanvraag:
+                Beste {formData.name}, we hebben uw aanvraag in goede orde ontvangen. Hier is een overzicht van de door u gewenste reservering:
               </p>
               
               <div className="bg-white rounded-xl p-6 mb-8 text-left max-w-md mx-auto border border-gray-100 shadow-sm">
@@ -107,9 +107,11 @@ export default function Reservation() {
                 </ul>
               </div>
 
-              <p className="text-sm text-gray-500 mb-8 italic">
-                We hebben een bevestiging gestuurd naar <strong>{formData.email}</strong>.
-              </p>
+              <div className="bg-legend-gold/10 border border-legend-gold/20 rounded-lg p-4 mb-8 max-w-md mx-auto">
+                <p className="text-sm text-legend-dark font-medium">
+                  Let op: Dit is een aanvraag. Wij controleren onze beschikbaarheid en nemen zo spoedig mogelijk contact met u op om de reservering definitief te bevestigen.
+                </p>
+              </div>
               <button
                 onClick={() => setIsSubmitted(false)}
                 className="text-legend-red hover:text-red-800 font-medium tracking-wider uppercase text-sm underline underline-offset-4"
