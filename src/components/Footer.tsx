@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Clock, Mail } from 'lucide-react';
+import { MapPin, Phone, Clock, Mail, X } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -69,16 +69,16 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-legend-red"></div>
+                <div className="w-2 h-2 rounded-full bg-green-500"></div>
                 <span>Ter plaatse eten</span>
               </li>
               <li className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-legend-gold"></div>
+                <div className="w-2 h-2 rounded-full bg-green-500"></div>
                 <span>Afhalen (Take-away)</span>
               </li>
-              <li className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-white/50"></div>
-                <span>Bezorging</span>
+              <li className="flex items-center gap-2 opacity-50">
+                <X size={14} className="text-red-500" />
+                <span className="line-through">Bezorging</span>
               </li>
             </ul>
             <a
