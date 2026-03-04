@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = 3000;
-const SECRET_KEY = process.env.ADMIN_SECRET_KEY || 'super-secret-key-for-legend-admin';
+const SECRET_KEY = 'super-secret-key-for-legend-admin'; // In a real app, use env var
 
 app.use(express.json());
 app.use(cookieParser());
@@ -24,11 +24,8 @@ const DATA_FILE = path.join(__dirname, 'data.json');
 
 // Helper to read data
 const readData = () => {
-  if (fs.existsSync(DATA_FILE)) {
-    const data = fs.readFileSync(DATA_FILE, 'utf-8');
-    return JSON.parse(data);
-  }
-  return {};
+  const data = fs.readFileSync(DATA_FILE, 'utf-8');
+  return JSON.parse(data);
 };
 
 // Helper to write data
@@ -52,10 +49,7 @@ const verifyToken = (req, res, next) => {
 // API: Login
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
-  const adminUser = process.env.ADMIN_USERNAME || 'admin';
-  const adminPass = process.env.ADMIN_PASSWORD || 'legend2026';
-  
-  if (username === adminUser && password === adminPass) {
+  if (username === 'admin' && password === 'legend2026') {
     const token = jwt.sign({ username }, SECRET_KEY, { expiresIn: '2h' });
     res.cookie('admin_token', token, {
       httpOnly: true,
@@ -86,12 +80,7 @@ app.post('/api/logout', (req, res) => {
 
 // API: Get Data (Public)
 app.get('/api/data', (req, res) => {
-  try {
-    const data = readData();
-    res.json(data);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to read data' });
-  }
+  res.json(readData());
 });
 
 // API: Update Data (Protected)
@@ -127,8 +116,4 @@ async function startServer() {
   });
 }
 
-if (!process.env.VERCEL) {
-  startServer();
-}
-
-export default app;
+startServer();
